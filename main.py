@@ -22,7 +22,7 @@ dpf = st.number_input('DiabetesPedigreeFunction')
 age = st.number_input('Age')
 
 
-if gl is not None and bp is not None and s is not None and insulin is not None and bmi is not None and dpf is not None and age is not None:
+if gl is not None and bp is not None and skinThickness is not None and insulin is not None and bmi is not None and dpf is not None and age is not None:
     if st.button('Predict'):
         input_data_reshaped = np.array([gl, bp, skinThickness, insulin, bmi, dpf, age]).reshape(1,-1)
         # Chuẩn hóa dữ liệu đầu vào
