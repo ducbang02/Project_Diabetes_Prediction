@@ -28,12 +28,12 @@ if pre is not None and gl is not None and bp is not None and skinThickness is no
     if st.button('Predict'):
         feature_vector = np.array([pre, gl, bp, skinThickness, insulin, bmi, dpf, age]).reshape(1,-1)
 
-        print(feature_vector)
+        
         # Máy làm và cho ra kết quả 0 hoặc 1
         prediction = model.predict(feature_vector)
     
         st.header('Result')
-        
+        st.header(feature_vector)
         if (prediction[0] == 0):
             st.text('The person is not diabetic')
         else:
