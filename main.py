@@ -24,14 +24,18 @@ age = st.number_input('Age')
 
 if gl is not None and bp is not None and skinThickness is not None and insulin is not None and bmi is not None and dpf is not None and age is not None:
     if st.button('Predict'):
-        input_data_reshaped = np.array([gl, bp, skinThickness, insulin, bmi, dpf, age]).reshape(1,-1)
+        feature_vector = np.array([gl, bp, skinThickness, insulin, bmi, dpf, age]).reshape(1,-1)
  
-        # Máy làm và cho ra kết quả 0 hoặc 1
-        prediction = model.predict(input_data_reshaped)
-    
+        result = str((model.predict(feature_vector)[0])[0])
+
         st.header('Result')
+        st.text(result)
+        # Máy làm và cho ra kết quả 0 hoặc 1
+        # prediction = model.predict(input_data_reshaped)
+    
+        # st.header('Result')
         
-        if (prediction[0] == 0):
-            st.text('The person is not diabetic')
-        else:
-            st.text('The person is diabetic')
+        # if (prediction[0] == 0):
+        #     st.text('The person is not diabetic')
+        # else:
+        #     st.text('The person is diabetic')
