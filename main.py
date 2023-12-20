@@ -13,6 +13,8 @@ input = open('diabetes.pkl', 'rb')
 model = pkl.load(input)
 
 st.header('Input admission information')
+
+pre = st.number_input('Pregnancies')
 gl = st.number_input('Glucose')
 bp = st.number_input('BloodPressure')
 skinThickness = st.number_input('SkinThickness')
@@ -22,9 +24,9 @@ dpf = st.number_input('DiabetesPedigreeFunction')
 age = st.number_input('Age')
 
 
-if gl is not None and bp is not None and skinThickness is not None and insulin is not None and bmi is not None and dpf is not None and age is not None:
+if pre is not None and gl is not None and bp is not None and skinThickness is not None and insulin is not None and bmi is not None and dpf is not None and age is not None:
     if st.button('Predict'):
-        feature_vector = np.array([gl, bp, skinThickness, insulin, bmi, dpf, age]).reshape(1,-1)
+        feature_vector = np.array([pre, gl, bp, skinThickness, insulin, bmi, dpf, age]).reshape(1,-1)
  
         result = str((model.predict(feature_vector)[0])[0])
 
