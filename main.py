@@ -19,7 +19,7 @@ gl = st.number_input('Glucose',step=1, format='%d')
 bp = st.number_input('BloodPressure', step=1, format='%d')
 skinThickness = st.number_input('SkinThickness', step=1, format='%d')
 insulin = st.number_input('Insulin', step=1, format='%d')
-bmi = st.number_input('BMI', '%.1f')
+bmi = st.number_input('BMI', format='%.1f')
 dpf = st.number_input('DiabetesPedigreeFunction', format='%.3f')
 age = st.number_input('Age', step=1, format='%d')
 
@@ -27,11 +27,8 @@ age = st.number_input('Age', step=1, format='%d')
 if pre is not None and gl is not None and bp is not None and skinThickness is not None and insulin is not None and bmi is not None and dpf is not None and age is not None:
     if st.button('Predict'):
         feature_vector = np.array([pre, gl, bp, skinThickness, insulin, bmi, dpf, age]).reshape(1,-1)
- 
-        # result = str((model.predict(feature_vector)[0])[0])
 
-        # st.header('Result')
-        # st.text(result)
+        print(feature_vector)
         # Máy làm và cho ra kết quả 0 hoặc 1
         prediction = model.predict(feature_vector)
     
