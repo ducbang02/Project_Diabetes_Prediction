@@ -28,16 +28,16 @@ if pre is not None and gl is not None and bp is not None and skinThickness is no
     if st.button('Predict'):
         feature_vector = np.array([pre, gl, bp, skinThickness, insulin, bmi, dpf, age]).reshape(1,-1)
  
-        result = str((model.predict(feature_vector)[0])[0])
+        # result = str((model.predict(feature_vector)[0])[0])
 
-        st.header('Result')
-        st.text(result)
-        # Máy làm và cho ra kết quả 0 hoặc 1
-        # prediction = model.predict(input_data_reshaped)
-    
         # st.header('Result')
+        # st.text(result)
+        # Máy làm và cho ra kết quả 0 hoặc 1
+        prediction = model.predict(feature_vector)
+    
+        st.header('Result')
         
-        # if (prediction[0] == 0):
-        #     st.text('The person is not diabetic')
-        # else:
-        #     st.text('The person is diabetic')
+        if (prediction[0] == 0):
+            st.text('The person is not diabetic')
+        else:
+            st.text('The person is diabetic')
