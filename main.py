@@ -14,14 +14,14 @@ model = pkl.load(input)
 
 st.header('Input admission information')
 
-pre = st.number_input('Pregnancies')
-gl = st.number_input('Glucose')
-bp = st.number_input('BloodPressure')
-skinThickness = st.number_input('SkinThickness')
-insulin = st.number_input('Insulin')
+pre = st.number_input('Pregnancies',step=1, format='%d')
+gl = st.number_input('Glucose',step=1, format='%d')
+bp = st.number_input('BloodPressure', step=1, format='%d')
+skinThickness = st.number_input('SkinThickness', step=1, format='%d')
+insulin = st.number_input('Insulin', step=1, format='%d')
 bmi = st.number_input('BMI')
-dpf = st.number_input('DiabetesPedigreeFunction')
-age = st.number_input('Age')
+dpf = st.number_input('DiabetesPedigreeFunction', format='%.3f')
+age = st.number_input('Age', step=1, format='%d')
 
 
 if pre is not None and gl is not None and bp is not None and skinThickness is not None and insulin is not None and bmi is not None and dpf is not None and age is not None:
