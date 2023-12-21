@@ -33,7 +33,7 @@ if pre is not None and gl is not None and bp is not None and skinThickness is no
         prediction = model.predict(feature_vector)
     
         st.header('Result')
-        st.header(feature_vector)
+        st.text(feature_vector)
         if (prediction[0] == 0):
             st.text('The person is not diabetic')
         else:
