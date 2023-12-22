@@ -17,14 +17,14 @@ st.header('Input admission information')
 # 9	165	88	0	0	30.4	0.302	49	1
 
 
-pre = st.number_input('Pregnancies Ex: 4, 9,...',step=1, format='%d')
-gl = st.number_input('Glucose Ex: 110, 165,...',step=1, format='%d')
-bp = st.number_input('BloodPressure Ex: 92, 88,...', step=1, format='%d')
-skinThickness = st.number_input('SkinThickness Ex: 0, 0,... ', step=1, format='%d')
-insulin = st.number_input('Insulin Ex: 0, 0,...', step=1, format='%d')
-bmi = st.number_input('BMI Ex: 37.6, 30.4')
-dpf = st.number_input('DiabetesPedigreeFunction Ex: 0.191, 0.302,...')
-age = st.number_input('Age Ex: 30, 49,...', step=1, format='%d')
+pre = st.number_input('Pregnancies',step=1, format='%d')
+gl = st.number_input('Glucose',step=1, format='%d')
+bp = st.number_input('BloodPressure', step=1, format='%d')
+skinThickness = st.number_input('SkinThickness', step=1, format='%d')
+insulin = st.number_input('Insulin', step=1, format='%d')
+bmi = st.number_input('BMI')
+dpf = st.number_input('DiabetesPedigreeFunction')
+age = st.number_input('Age', step=1, format='%d')
 
 
 if pre is not None and gl is not None and bp is not None and skinThickness is not None and insulin is not None and bmi is not None and dpf is not None and age is not None:
