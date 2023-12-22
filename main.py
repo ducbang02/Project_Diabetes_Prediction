@@ -28,9 +28,9 @@ if pre is not None and gl is not None and bp is not None and skinThickness is no
     if st.button('Predict'):
         feature_vector = np.array([pre, gl, bp, skinThickness, insulin, bmi, dpf, age]).reshape(1,-1)
 
-        
+        std_data = model.scaler.transform(feature_vector)
         # Máy làm và cho ra kết quả 0 hoặc 1
-        prediction = model.predict(feature_vector)
+        prediction = model.predict(std_data)
     
         st.header('Result')
         st.text(feature_vector)
