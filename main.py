@@ -4,7 +4,7 @@ import pickle as pkl
 import numpy as np
 
 
-st.title("Ứng Dụng Dự Đoán Điabetes")
+st.title("Diabetes Prediction Application")
 
 image = Image.open('DiabetesPredictioninMachineLearningusingPython.jpg')
 st.image(image)
