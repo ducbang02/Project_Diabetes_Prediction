@@ -20,7 +20,7 @@ bp = st.number_input('BloodPressure', step=1, format='%d')
 skinThickness = st.number_input('SkinThickness', step=1, format='%d')
 insulin = st.number_input('Insulin', step=1, format='%d')
 bmi = st.number_input('BMI')
-dpf = st.number_input('DiabetesPedigreeFunction', format='%.3f')
+dpf = st.number_input('DiabetesPedigreeFunction')
 age = st.number_input('Age', step=1, format='%d')
 
 
